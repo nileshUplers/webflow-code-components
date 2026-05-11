@@ -2,6 +2,7 @@ import React from 'react';
 import { Button } from '../components/Button';
 import { Badge } from '../components/Badge';
 import { Alert } from '../components/Alert';
+import { Countdown } from '../components/Countdown';
 
 const ComponentsDisplayPage: React.FC = () => {
   const components = [
@@ -45,13 +46,22 @@ const ComponentsDisplayPage: React.FC = () => {
         </div>
       ),
     },
+    {
+      name: 'Countdown Timer',
+      description: 'A dynamic real-time countdown to a target date. This is an advanced teaching example that demonstrates React lifecycle hooks (useState, useEffect) and proper cleanup to prevent memory leaks.',
+      render: (
+        <div style={{ display: 'flex', flexDirection: 'column', gap: '2rem', width: '100%', alignItems: 'center' }}>
+          <Countdown targetDate={new Date(Date.now() + 1000 * 60 * 60 * 24 * 3).toISOString()} title="Event Starts In" />
+        </div>
+      ),
+    },
   ];
 
   return (
     <div className="page-container">
       <header className="page-header">
         <h1>Component Library</h1>
-        <p>3 starter components — each one demonstrates a different set of Webflow prop types.</p>
+        <p>4 starter components — from basic props to advanced React hooks.</p>
       </header>
 
       <div className="component-stack">
