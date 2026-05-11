@@ -40,25 +40,32 @@ function App() {
           <Routes>
             <Route path="/" element={
               <div className="page-container">
-                <header className="page-header">
-                  <h1>Welcome to Webflow Starter</h1>
-                  <p>Get started by exploring your components and design variables.</p>
-                </header>
-                <div className="dashboard-grid" style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '2rem' }}>
-                  <div className="component-card" style={{ padding: '2rem', textAlign: 'center' }}>
-                    <h2>{5} Components</h2>
-                    <p>Manage and preview your React components.</p>
-                    <NavLink to="/components" className="badge" style={{ display: 'inline-block', marginTop: '1rem', textDecoration: 'none' }}>View Gallery</NavLink>
+                <div className="dashboard-hero">
+                  <div className="dashboard-eyebrow">✦ Webflow Code Components</div>
+                  <h1 className="dashboard-title">Build. Preview. Ship.</h1>
+                  <p className="dashboard-subtitle">
+                    Your team's workspace for building premium React components, managing design tokens, and syncing them directly into Webflow.
+                  </p>
+                </div>
+                <div className="dashboard-grid">
+                  <div className="dashboard-card">
+                    <div className="card-icon">🧩</div>
+                    <div className="card-count">5</div>
+                    <div className="card-label">Components</div>
+                    <p className="card-desc">Preview and test all Webflow-ready React components in a live environment before shipping.</p>
+                    <NavLink to="/components" className="card-link">View Gallery</NavLink>
                   </div>
-                  <div className="component-card" style={{ padding: '2rem', textAlign: 'center' }}>
-                    <h2>Variables</h2>
-                    <p>Visualize your global design tokens.</p>
-                    <NavLink to="/variables" className="badge" style={{ display: 'inline-block', marginTop: '1rem', textDecoration: 'none' }}>View Variables</NavLink>
+                  <div className="dashboard-card">
+                    <div className="card-icon">🎨</div>
+                    <div className="card-label">Design Tokens</div>
+                    <p className="card-desc">Explore all global CSS variables — colors, spacing, typography, shadows — used across every component.</p>
+                    <NavLink to="/variables" className="card-link">View Variables</NavLink>
                   </div>
-                  <div className="component-card" style={{ padding: '2rem', textAlign: 'center' }}>
-                    <h2>Documentation</h2>
-                    <p>Full guide on adding components & variables.</p>
-                    <NavLink to="/docs" className="badge" style={{ display: 'inline-block', marginTop: '1rem', textDecoration: 'none' }}>Read Guide</NavLink>
+                  <div className="dashboard-card">
+                    <div className="card-icon">📖</div>
+                    <div className="card-label">Team Guide</div>
+                    <p className="card-desc">Step-by-step instructions for adding components, variables, and bundling them into Webflow.</p>
+                    <NavLink to="/docs" className="card-link">Read the Guide</NavLink>
                   </div>
                 </div>
               </div>

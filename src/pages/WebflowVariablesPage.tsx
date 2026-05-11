@@ -49,8 +49,8 @@ const WebflowVariablesPage: React.FC = () => {
   return (
     <div className="page-container">
       <header className="page-header">
-        <h1>Webflow Variables</h1>
-        <p>A comprehensive set of global design tokens synchronized with your Webflow project.</p>
+        <h1>Design Tokens</h1>
+        <p>Global CSS variables that power every component — colors, spacing, typography, and more.</p>
       </header>
 
       <section className="variable-section">

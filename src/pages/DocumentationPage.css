@@ -1,149 +1,244 @@
 .documentation-page {
-  max-width: 1200px;
+  max-width: 900px;
   margin: 0 auto;
-  padding: 2rem;
-  line-height: 1.6;
+  padding: 3rem 2.5rem;
+  line-height: 1.65;
 }
 
+/* ─── Hero ─── */
 .doc-hero {
   text-align: center;
-  padding: 4rem 0;
-  background: var(--primary-gradient);
+  padding: 4rem 3rem;
+  background: linear-gradient(135deg, #0f0c29, #302b63, #24243e);
   color: white;
-  border-radius: var(--wf-border-radius--xl);
-  margin-bottom: 4rem;
-  box-shadow: var(--wf-shadow--xl);
+  border-radius: 24px;
+  margin-bottom: 3rem;
+  box-shadow: 0 20px 60px rgba(67, 83, 255, 0.3);
+  position: relative;
+  overflow: hidden;
+}
+
+.doc-hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse 80% 60% at 50% 0%, rgba(99, 120, 255, 0.3) 0%, transparent 70%);
+  pointer-events: none;
 }
 
 .doc-hero h1 {
-  font-size: var(--wf-font-size--5xl);
+  font-family: 'Outfit', sans-serif;
+  font-size: clamp(2rem, 5vw, 3rem);
+  font-weight: 900;
+  letter-spacing: -1.5px;
   margin-bottom: 1rem;
-  font-weight: var(--wf-font-weight--extrabold);
+  position: relative;
 }
 
 .doc-hero p {
-  font-size: var(--wf-font-size--lg);
-  opacity: 0.9;
+  font-size: 1.05rem;
+  opacity: 0.75;
+  max-width: 500px;
+  margin: 0 auto;
+  position: relative;
 }
 
+/* ─── Section ─── */
 .doc-section {
-  margin-bottom: 4rem;
+  margin-bottom: 2rem;
   background: var(--card-bg);
-  padding: 3rem;
-  border-radius: var(--wf-border-radius--xl);
-  box-shadow: var(--wf-shadow--md);
+  padding: 2.5rem;
+  border-radius: 20px;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.04);
   border: 1px solid var(--glass-border);
 }
 
 .doc-section h2 {
-  font-size: var(--wf-font-size--3xl);
+  font-family: 'Outfit', sans-serif;
+  font-size: 1.35rem;
+  font-weight: 800;
   margin-bottom: 1.5rem;
   color: var(--text-color);
   display: flex;
   align-items: center;
-  gap: 1rem;
+  gap: 0.75rem;
+  letter-spacing: -0.3px;
 }
 
 .doc-section h2::before {
   content: '';
   display: block;
-  width: 4px;
-  height: 24px;
-  background: var(--wf-color--primary);
+  width: 3px;
+  height: 20px;
+  background: linear-gradient(135deg, #4353ff, #7c3aed);
   border-radius: 2px;
+  flex-shrink: 0;
 }
 
+.doc-section > p {
+  color: var(--text-muted);
+  margin-top: 0;
+  margin-bottom: 1.5rem;
+  font-size: 0.95rem;
+}
+
+/* ─── Step ─── */
 .doc-step {
   display: flex;
-  gap: 2rem;
-  margin-bottom: 2rem;
-  padding-bottom: 2rem;
+  gap: 1.5rem;
+  padding: 1.75rem 0;
   border-bottom: 1px solid var(--glass-border);
+}
+
+.doc-step:first-of-type {
+  padding-top: 0;
 }
 
 .doc-step:last-child {
   border-bottom: none;
-  margin-bottom: 0;
   padding-bottom: 0;
 }
 
 .step-number {
   flex-shrink: 0;
-  width: 40px;
-  height: 40px;
-  background: var(--wf-color--primary);
+  width: 36px;
+  height: 36px;
+  background: linear-gradient(135deg, #4353ff, #7c3aed);
   color: white;
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-weight: bold;
-  font-size: 1.2rem;
+  font-weight: 700;
+  font-size: 0.9rem;
+  box-shadow: 0 4px 12px rgba(67, 83, 255, 0.35);
+  margin-top: 2px;
 }
 
 .step-content {
   flex-grow: 1;
+  min-width: 0;
 }
 
 .step-content h3 {
-  margin-top: 0;
+  font-size: 1.05rem;
+  font-weight: 700;
   margin-bottom: 0.5rem;
-  font-size: var(--wf-font-size--xl);
+  color: var(--text-color);
+  letter-spacing: -0.2px;
 }
 
+.step-content p {
+  color: var(--text-muted);
+  font-size: 0.92rem;
+  margin: 0 0 0.75rem;
+}
+
+.step-content ol {
+  color: var(--text-muted);
+  font-size: 0.92rem;
+  padding-left: 1.25rem;
+  margin: 0;
+}
+
+.step-content ol li {
+  margin-bottom: 0.25rem;
+}
+
+/* ─── Code Block ─── */
 .code-block {
-  background: #1e1e1e;
-  color: #d4d4d4;
-  padding: 1.5rem;
+  background: #0d1117;
+  color: #c9d1d9;
+  padding: 1.25rem 1.5rem;
   border-radius: 12px;
-  font-family: 'Fira Code', 'Courier New', Courier, monospace;
-  font-size: 0.9rem;
-  margin: 1rem 0;
+  font-family: 'Fira Code', 'Courier New', monospace;
+  font-size: 0.82rem;
+  line-height: 1.7;
+  margin: 0.75rem 0;
   overflow-x: auto;
-  position: relative;
+  border: 1px solid rgba(255,255,255,0.06);
+  white-space: pre;
 }
 
-.doc-section a {
-  color: var(--wf-color--primary);
-  text-decoration: none;
-}
-
-.doc-section a:hover {
-  text-decoration: underline;
-}
-
+/* ─── Grid ─── */
 .doc-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 2rem;
-  margin-top: 2rem;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 1rem;
+  margin-top: 1.25rem;
 }
 
+/* ─── Info Card ─── */
 .info-card {
-  background: var(--wf-color--primary-light);
-  border-left: 4px solid var(--wf-color--primary);
-  padding: 1.5rem;
-  border-radius: var(--wf-border-radius--base);
-  margin: 1.5rem 0;
+  background: rgba(67, 83, 255, 0.04);
+  border: 1px solid rgba(67, 83, 255, 0.15);
+  border-radius: 12px;
+  padding: 1.25rem;
+  margin: 1rem 0;
+  transition: border-color 0.2s ease, background 0.2s ease;
+}
+
+.info-card:hover {
+  background: rgba(67, 83, 255, 0.07);
+  border-color: rgba(67, 83, 255, 0.3);
 }
 
 .info-card h4 {
   margin-top: 0;
+  margin-bottom: 0.4rem;
   color: var(--wf-color--primary);
-  margin-bottom: 0.5rem;
+  font-size: 0.9rem;
+  font-weight: 700;
 }
 
+.info-card p {
+  margin: 0;
+  color: var(--text-muted);
+  font-size: 0.88rem;
+  line-height: 1.5;
+}
+
+/* ─── Links ─── */
+.doc-section a {
+  color: var(--wf-color--primary);
+  text-decoration: none;
+  font-weight: 500;
+  border-bottom: 1px solid rgba(67,83,255,0.3);
+  transition: border-color 0.2s ease;
+}
+
+.doc-section a:hover {
+  border-color: var(--wf-color--primary);
+}
+
+/* ─── Responsive ─── */
 @media (max-width: 768px) {
+  .documentation-page {
+    padding: 2rem 1.25rem;
+  }
+
+  .doc-hero {
+    padding: 3rem 1.5rem;
+  }
+
   .doc-hero h1 {
-    font-size: 2.5rem;
+    font-size: 2rem;
   }
-  
+
   .doc-section {
-    padding: 2rem;
+    padding: 1.75rem 1.5rem;
   }
-  
+
   .doc-step {
     flex-direction: column;
-    gap: 1rem;
+    gap: 0.75rem;
+  }
+
+  .doc-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .code-block {
+    font-size: 0.75rem;
   }
 }
