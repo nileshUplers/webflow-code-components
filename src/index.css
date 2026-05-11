@@ -1,35 +1,36 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Outfit:wght@400;600;700;800;900&family=Fira+Code:wght@400;500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Orbitron:wght@500;700;900&family=Fira+Code:wght@400;500&display=swap');
 @import './styles/webflow-variables.css';
 
 /* ─────────────────────────────────────────────
-   THEME TOKENS
+   THEME TOKENS (CYBERPUNK)
 ───────────────────────────────────────────── */
 :root {
-  --primary-gradient: linear-gradient(135deg, #4353ff 0%, #7c3aed 100%);
-  --hero-gradient: linear-gradient(135deg, #0f0c29, #302b63, #24243e);
-  --surface-color: rgba(255, 255, 255, 0.85);
-  --glass-border: rgba(67, 83, 255, 0.12);
-  --glass-shadow: 0 8px 32px rgba(31, 38, 135, 0.12);
-  --bg-color: #f4f6ff;
-  --bg-subtle: #eef0fb;
-  --text-color: #0f0f1a;
-  --text-muted: #6b7280;
-  --card-bg: #ffffff;
-  --nav-bg: rgba(255, 255, 255, 0.92);
+  --primary-gradient: linear-gradient(135deg, #00f0ff 0%, #ff003c 100%);
+  --hero-gradient: linear-gradient(135deg, rgba(5,10,31,0.9), rgba(26,11,46,0.9), rgba(13,19,33,0.9));
+  --surface-color: rgba(10, 15, 30, 0.85);
+  --glass-border: rgba(0, 240, 255, 0.3);
+  --glass-shadow: 0 0 15px rgba(0, 240, 255, 0.2);
+  --bg-color: #02040a;
+  --bg-subtle: #090e17;
+  --text-color: #e0f2fe;
+  --text-muted: #8b949e;
+  --card-bg: #0d1117;
+  --nav-bg: rgba(2, 4, 10, 0.8);
   --nav-height: 64px;
   --sidebar-width: 220px;
-  --accent-glow: 0 0 24px rgba(67, 83, 255, 0.25);
+  --accent-glow: 0 0 24px rgba(255, 0, 60, 0.4);
 }
 
 body.dark-mode {
-  --bg-color: #080b18;
-  --bg-subtle: #0f1427;
-  --text-color: #f0f4ff;
-  --text-muted: #8892b0;
-  --card-bg: #111827;
-  --nav-bg: rgba(8, 11, 24, 0.92);
-  --glass-border: rgba(99, 120, 255, 0.15);
-  --surface-color: rgba(17, 24, 39, 0.9);
+  --bg-color: #02040a;
+  --bg-subtle: #090e17;
+  --text-color: #e0f2fe;
+  --text-muted: #8b949e;
+  --card-bg: #0d1117;
+  --nav-bg: rgba(2, 4, 10, 0.8);
+  --glass-border: rgba(255, 0, 60, 0.4);
+  --surface-color: rgba(13, 17, 23, 0.9);
+  --primary-gradient: linear-gradient(135deg, #ff003c 0%, #00f0ff 100%);
 }
 
 /* ─────────────────────────────────────────────
@@ -48,9 +49,11 @@ body {
 }
 
 h1, h2, h3, h4, h5, h6 {
-  font-family: 'Outfit', var(--wf-font-family--heading);
+  font-family: 'Orbitron', var(--wf-font-family--heading);
   line-height: 1.2;
   margin: 0;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
 }
 
 code {
@@ -94,14 +97,12 @@ code {
 }
 
 .nav-logo {
-  font-family: 'Outfit', sans-serif;
-  font-weight: 800;
-  font-size: 1.15rem;
-  letter-spacing: -0.5px;
-  background: var(--primary-gradient);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
+  font-family: 'Orbitron', sans-serif;
+  font-weight: 900;
+  font-size: 1.25rem;
+  letter-spacing: 1px;
+  color: #00f0ff;
+  text-shadow: 0 0 8px rgba(0, 240, 255, 0.5);
   display: flex;
   align-items: center;
   gap: 0.5rem;
@@ -466,16 +467,23 @@ code {
 ───────────────────────────────────────────── */
 .dashboard-hero {
   text-align: center;
-  padding: 5rem 2rem 4rem;
+  padding: 8rem 2rem 6rem;
   position: relative;
   overflow: hidden;
+  border-radius: 20px;
+  margin-bottom: 3rem;
+  background-image: url('../public/cyberpunk_anime_bg.png');
+  background-size: cover;
+  background-position: center;
+  border: 1px solid var(--glass-border);
+  box-shadow: 0 0 40px rgba(0, 240, 255, 0.1);
 }
 
 .dashboard-hero::before {
   content: '';
   position: absolute;
   inset: 0;
-  background: radial-gradient(ellipse 80% 60% at 50% 0%, rgba(67,83,255,0.08) 0%, transparent 70%);
+  background: linear-gradient(180deg, rgba(2,4,10,0.4) 0%, rgba(2,4,10,0.9) 100%);
   pointer-events: none;
 }
 
@@ -483,33 +491,42 @@ code {
   display: inline-flex;
   align-items: center;
   gap: 0.5rem;
-  background: rgba(67,83,255,0.08);
-  border: 1px solid rgba(67,83,255,0.2);
-  color: var(--wf-color--primary);
+  background: rgba(0, 240, 255, 0.1);
+  border: 1px solid rgba(0, 240, 255, 0.4);
+  color: #00f0ff;
   font-size: 0.8rem;
-  font-weight: 600;
-  letter-spacing: 0.08em;
+  font-weight: 700;
+  letter-spacing: 0.15em;
   text-transform: uppercase;
   padding: 0.35rem 0.9rem;
-  border-radius: 100px;
+  border-radius: 4px;
+  position: relative;
+  z-index: 10;
+  text-shadow: 0 0 8px rgba(0, 240, 255, 0.6);
   margin-bottom: 1.5rem;
 }
 
 .dashboard-title {
-  font-size: clamp(2.5rem, 5vw, 3.75rem);
+  font-size: clamp(3rem, 6vw, 4.5rem);
   font-weight: 900;
-  letter-spacing: -2px;
+  letter-spacing: 1px;
   line-height: 1.1;
-  background: var(--primary-gradient);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
+  color: #fff;
+  text-shadow: 0 0 15px rgba(255, 0, 60, 0.8), 2px 2px 0px #00f0ff, -2px -2px 0px #ff003c;
+  position: relative;
+  z-index: 10;
   margin-bottom: 1.25rem;
 }
 
 .dashboard-subtitle {
   font-size: 1.15rem;
-  color: var(--text-muted);
+  color: #e0f2fe;
+  position: relative;
+  z-index: 10;
+  background: rgba(2, 4, 10, 0.6);
+  padding: 1rem;
+  border-radius: 8px;
+  border-left: 4px solid #ff003c;
   max-width: 520px;
   margin: 0 auto 3rem;
   line-height: 1.65;
@@ -526,13 +543,14 @@ code {
 .dashboard-card {
   background: var(--card-bg);
   border: 1px solid var(--glass-border);
-  border-radius: 20px;
+  border-radius: 0;
+  clip-path: polygon(0 0, 100% 0, 100% calc(100% - 20px), calc(100% - 20px) 100%, 0 100%);
   padding: 2.25rem;
   text-align: left;
   display: flex;
   flex-direction: column;
   gap: 0;
-  box-shadow: 0 2px 12px rgba(0,0,0,0.04);
+  box-shadow: var(--glass-shadow);
   transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
   position: relative;
   overflow: hidden;
@@ -550,8 +568,8 @@ code {
 
 .dashboard-card:hover {
   transform: translateY(-4px);
-  box-shadow: 0 12px 40px rgba(67,83,255,0.12);
-  border-color: rgba(67,83,255,0.25);
+  box-shadow: 0 0 25px rgba(255, 0, 60, 0.3);
+  border-color: rgba(255, 0, 60, 0.8);
 }
 
 .dashboard-card:hover::before {

@@ -22,7 +22,7 @@ function App() {
     <Router>
       <div className="App">
         <nav className="main-nav">
-          <div className="nav-logo">Webflow Starter</div>
+          <div className="nav-logo">Webflow Starter <span style={{ opacity: 0.5, fontSize: '0.6em', marginLeft: '8px', letterSpacing: '2px' }}>ウェブフロー</span></div>
           <div className="nav-right">
             <div className="nav-links">
               <NavLink to="/" end className={({ isActive }) => isActive ? 'active' : ''}>Dashboard</NavLink>
@@ -31,7 +31,7 @@ function App() {
               <NavLink to="/docs" className={({ isActive }) => isActive ? 'active' : ''}>Guide</NavLink>
             </div>
             <button className="theme-toggle" onClick={toggleDarkMode} title="Toggle Theme">
-              {isDarkMode ? '🌞' : '🌙'}
+              {isDarkMode ? '⚡' : '👁️'}
             </button>
           </div>
         </nav>
@@ -41,10 +41,10 @@ function App() {
             <Route path="/" element={
               <div className="page-container">
                 <div className="dashboard-hero">
-                  <div className="dashboard-eyebrow">✦ Webflow Code Components</div>
-                  <h1 className="dashboard-title">Build. Preview. Ship.</h1>
+                  <div className="dashboard-eyebrow">✦ システム // SYSTEM.WEBFLOW.COMPONENTS</div>
+                  <h1 className="dashboard-title">BUILD. PREVIEW. SHIP.</h1>
                   <p className="dashboard-subtitle">
-                    Your team's workspace for building premium React components, managing design tokens, and syncing them directly into Webflow.
+                    [ACCESS GRANTED] Your team's neural workspace for building premium React components, managing design tokens, and syncing them directly into the Webflow mainframe.
                   </p>
                 </div>
                 <div className="dashboard-grid">
