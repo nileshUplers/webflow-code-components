@@ -22,8 +22,10 @@ Make sure you have:
 ```bash
 git clone https://github.com/nileshUplers/webflow-code-components.git
 cd webflow-code-components
-npm install
+npm install --legacy-peer-deps
 ```
+
+> **Note:** If you see "ERRESOLVE" errors, ensure you use the `--legacy-peer-deps` flag. We've included a `.npmrc` file to handle this automatically, but some environments may still require the explicit flag.
 
 ### 2. Set Up Environment Variables
 
