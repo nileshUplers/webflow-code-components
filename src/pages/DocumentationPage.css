@@ -103,15 +103,13 @@
   position: relative;
 }
 
-.code-block::before {
-  content: 'Terminal';
-  position: absolute;
-  top: 0;
-  right: 1.5rem;
-  padding: 0.2rem 0.5rem;
-  font-size: 0.7rem;
-  color: #888;
-  text-transform: uppercase;
+.doc-section a {
+  color: var(--wf-color--primary);
+  text-decoration: none;
+}
+
+.doc-section a:hover {
+  text-decoration: underline;
 }
 
 .doc-grid {
