@@ -1,4 +1,23 @@
-import React from 'react';
+import React, { useState } from 'react';
+
+const CopyButton: React.FC<{ text: string }> = ({ text }) => {
+  const [copied, setCopied] = useState(false);
+  const handleCopy = () => {
+    navigator.clipboard.writeText(text);
+    setCopied(true);
+    setTimeout(() => setCopied(false), 2000);
+  };
+  return (
+    <button 
+      onClick={handleCopy} 
+      className={`copy-btn ${copied ? 'copied' : ''}`}
+      title={`Copy: ${text}`}
+    >
+      {copied ? '✓' : '📋'}
+    </button>
+  );
+};
+
 const WebflowVariablesPage: React.FC = () => {
   const colors = [
     { name: '--wf-color--primary', value: '#4353ff' },
@@ -62,8 +81,14 @@ const WebflowVariablesPage: React.FC = () => {
                 style={{ backgroundColor: color.value, border: color.value === '#ffffff' ? '1px solid #ddd' : 'none' }}
               />
               <div className="variable-details">
-                <code>{color.name}</code>
-                <span>{color.value}</span>
+                <div className="copyable-row">
+                  <code>{color.name}</code>
+                  <CopyButton text={color.name} />
+                </div>
+                <div className="copyable-row">
+                  <span>{color.value}</span>
+                  <CopyButton text={color.value} />
+                </div>
               </div>
             </div>
           ))}
@@ -78,8 +103,14 @@ const WebflowVariablesPage: React.FC = () => {
             <div className="variable-grid-wide">
               {typography.map((typo) => (
                 <div key={typo.name} className="variable-item">
-                  <code>{typo.name}</code>
-                  <span className="variable-value">{typo.value}</span>
+                  <div className="copyable-row">
+                    <code>{typo.name}</code>
+                    <CopyButton text={typo.name} />
+                  </div>
+                  <div className="copyable-row">
+                    <span className="variable-value">{typo.value}</span>
+                    <CopyButton text={typo.value} />
+                  </div>
                 </div>
               ))}
             </div>
@@ -90,8 +121,14 @@ const WebflowVariablesPage: React.FC = () => {
             <div className="variable-grid-wide">
               {fontSizeScale.map((size) => (
                 <div key={size.name} className="variable-item">
-                  <code>{size.name}</code>
-                  <span className="variable-value">{size.value}</span>
+                  <div className="copyable-row">
+                    <code>{size.name}</code>
+                    <CopyButton text={size.name} />
+                  </div>
+                  <div className="copyable-row">
+                    <span className="variable-value">{size.value}</span>
+                    <CopyButton text={size.value} />
+                  </div>
                   <div className="typo-preview" style={{ fontSize: `var(${size.name})`, lineHeight: 1 }}>
                     Aa
                   </div>
@@ -109,8 +146,14 @@ const WebflowVariablesPage: React.FC = () => {
             <div key={space.name} className="variable-card spacing-card">
               <div className="spacing-preview" style={{ width: `var(${space.name})`, height: `var(${space.name})`, background: 'var(--wf-color--primary)' }} />
               <div className="variable-details">
-                <code>{space.name}</code>
-                <span>{space.value}</span>
+                <div className="copyable-row">
+                  <code>{space.name}</code>
+                  <CopyButton text={space.name} />
+                </div>
+                <div className="copyable-row">
+                  <span>{space.value}</span>
+                  <CopyButton text={space.value} />
+                </div>
               </div>
             </div>
           ))}
@@ -124,7 +167,10 @@ const WebflowVariablesPage: React.FC = () => {
             <div key={size} className="variable-card shadow-card">
               <div className="shadow-preview" style={{ boxShadow: `var(--wf-shadow--${size})`, width: '100%', height: '60px', borderRadius: '8px', background: 'white' }} />
               <div className="variable-details">
-                <code>--wf-shadow--{size}</code>
+                <div className="copyable-row">
+                  <code>--wf-shadow--{size}</code>
+                  <CopyButton text={`--wf-shadow--${size}`} />
+                </div>
               </div>
             </div>
           ))}

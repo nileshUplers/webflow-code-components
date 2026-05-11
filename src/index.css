@@ -677,6 +677,38 @@ code {
 }
 
 /* ─────────────────────────────────────────────
+   COPY BUTTON
+───────────────────────────────────────────── */
+.copyable-row {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.copy-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  opacity: 0.3;
+  transition: opacity 0.2s ease, transform 0.2s ease;
+  font-size: 0.9rem;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.copy-btn:hover {
+  opacity: 1;
+  transform: scale(1.1);
+}
+
+.copy-btn.copied {
+  color: var(--wf-color--success);
+  opacity: 1;
+}
+
+/* ─────────────────────────────────────────────
    RESPONSIVE
 ───────────────────────────────────────────── */
 @media (max-width: 768px) {
