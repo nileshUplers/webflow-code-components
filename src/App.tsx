@@ -1,4 +1,3 @@
-import React from 'react';
 import { BrowserRouter as Router, Routes, Route, NavLink } from 'react-router-dom';
 import './index.css';
 import ComponentsDisplayPage from './pages/ComponentsDisplayPage';
@@ -6,18 +5,6 @@ import WebflowVariablesPage from './pages/WebflowVariablesPage';
 import DocumentationPage from './pages/DocumentationPage';
 
 function App() {
-  const [isDarkMode, setIsDarkMode] = React.useState(false);
-
-  React.useEffect(() => {
-    if (isDarkMode) {
-      document.body.classList.add('dark-mode');
-    } else {
-      document.body.classList.remove('dark-mode');
-    }
-  }, [isDarkMode]);
-
-  const toggleDarkMode = () => setIsDarkMode(!isDarkMode);
-
   return (
     <Router>
       <div className="App">
@@ -30,9 +17,6 @@ function App() {
               <NavLink to="/variables" className={({ isActive }) => isActive ? 'active' : ''}>Design Runes</NavLink>
               <NavLink to="/docs" className={({ isActive }) => isActive ? 'active' : ''}>Wizard's Guide</NavLink>
             </div>
-            <button className="theme-toggle" onClick={toggleDarkMode} title="Toggle Theme">
-              {isDarkMode ? '🌙' : '✨'}
-            </button>
           </div>
         </nav>
 

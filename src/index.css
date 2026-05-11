@@ -21,18 +21,6 @@
   --accent-glow: 0 0 28px rgba(200, 169, 81, 0.35);
 }
 
-body.dark-mode {
-  --bg-color: #0a080f;
-  --bg-subtle: #12091c;
-  --text-color: #f5e6c8;
-  --text-muted: #9e8c6e;
-  --card-bg: #12091c;
-  --nav-bg: rgba(10, 8, 15, 0.9);
-  --glass-border: rgba(200, 169, 81, 0.35);
-  --surface-color: rgba(18, 9, 28, 0.9);
-  --primary-gradient: linear-gradient(135deg, #c8a951 0%, #ae0001 100%);
-}
-
 /* ─────────────────────────────────────────────
    RESET & BASE
 ───────────────────────────────────────────── */
@@ -141,27 +129,6 @@ code {
   color: #c8a951;
   background: rgba(200, 169, 81, 0.1);
   font-weight: 600;
-}
-
-.theme-toggle {
-  background: none;
-  border: 1px solid var(--glass-border);
-  color: var(--text-color);
-  width: 36px;
-  height: 36px;
-  border-radius: 10px;
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 1rem;
-  transition: all 0.2s ease;
-  margin-left: 0.5rem;
-}
-
-.theme-toggle:hover {
-  background: var(--bg-subtle);
-  border-color: var(--wf-color--primary);
 }
 
 /* ─────────────────────────────────────────────
