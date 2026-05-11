@@ -38,7 +38,6 @@ function App() {
                 <div className="dashboard-grid">
                   <div className="dashboard-card">
                     <div className="card-icon">🧩</div>
-                    <div className="card-count">7</div>
                     <div className="card-label">Component Library</div>
                     <p className="card-desc">Preview and test all Webflow-ready React components in a live environment before casting them into production.</p>
                     <NavLink to="/components" className="card-link">View Components</NavLink>
