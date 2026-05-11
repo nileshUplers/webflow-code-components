@@ -1,13 +1,4 @@
 import React from 'react';
-
-
-const formatRemToPx = (valueStr: string) => {
-  if (!valueStr.includes('rem')) return valueStr;
-  const remVal = parseFloat(valueStr);
-  if (isNaN(remVal)) return valueStr;
-  return `${valueStr} (${remVal * 16}px)`;
-};
-
 const WebflowVariablesPage: React.FC = () => {
   const colors = [
     { name: '--wf-color--primary', value: '#4353ff' },
@@ -100,7 +91,7 @@ const WebflowVariablesPage: React.FC = () => {
               {fontSizeScale.map((size) => (
                 <div key={size.name} className="variable-item">
                   <code>{size.name}</code>
-                  <span className="variable-value">{formatRemToPx(size.value)}</span>
+                  <span className="variable-value">{size.value}</span>
                   <div className="typo-preview" style={{ fontSize: `var(${size.name})`, lineHeight: 1 }}>
                     Aa
                   </div>
@@ -119,7 +110,7 @@ const WebflowVariablesPage: React.FC = () => {
               <div className="spacing-preview" style={{ width: `var(${space.name})`, height: `var(${space.name})`, background: 'var(--wf-color--primary)' }} />
               <div className="variable-details">
                 <code>{space.name}</code>
-                <span>{formatRemToPx(space.value.split(' ')[0])}</span>
+                <span>{space.value}</span>
               </div>
             </div>
           ))}
