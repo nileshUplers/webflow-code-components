@@ -1,18 +1,18 @@
 :root {
-  /* --- Colors --- */
-  --wf-color--primary: #fcee0a;
-  --wf-color--primary-light: rgba(252, 238, 10, 0.1);
-  --wf-color--secondary: #0df0d4;
+  /* --- Colors (Gryffindor / Hogwarts) --- */
+  --wf-color--primary: #c8a951;
+  --wf-color--primary-light: rgba(200, 169, 81, 0.1);
+  --wf-color--secondary: #ae0001;
   --wf-color--white: #ffffff;
-  --wf-color--black: #000000;
-  --wf-color--gray: #1a1a1a;
-  --wf-color--gray-dark: #0d0d0d;
-  --wf-color--success: #0df0d4;
-  --wf-color--error: #ff003c;
+  --wf-color--black: #0a080f;
+  --wf-color--gray: #2a1f35;
+  --wf-color--gray-dark: #12091c;
+  --wf-color--success: #4a7c59;
+  --wf-color--error: #ae0001;
 
   /* --- Typography --- */
-  --wf-font-family--base: 'Rajdhani', 'Inter', system-ui, sans-serif;
-  --wf-font-family--heading: 'Rajdhani', 'Outfit', sans-serif;
+  --wf-font-family--base: 'EB Garamond', Georgia, serif;
+  --wf-font-family--heading: 'Cinzel', 'Georgia', serif;
 
   /* Font Sizes */
   --wf-font-size--xs: 0.75rem;    /* 12px */
@@ -54,16 +54,16 @@
   --wf-spacing--4xl: 8rem;     /* 128px */
 
   /* --- Borders & Shadows --- */
-  --wf-border-radius--sm: 0px;
-  --wf-border-radius--base: 0px;
-  --wf-border-radius--lg: 0px;
-  --wf-border-radius--xl: 0px;
-  --wf-border-radius--full: 0px;
+  --wf-border-radius--sm: 4px;
+  --wf-border-radius--base: 6px;
+  --wf-border-radius--lg: 10px;
+  --wf-border-radius--xl: 16px;
+  --wf-border-radius--full: 9999px;
 
-  --wf-shadow--sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
-  --wf-shadow--md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
-  --wf-shadow--lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
-  --wf-shadow--xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+  --wf-shadow--sm: 0 1px 2px 0 rgba(0, 0, 0, 0.3);
+  --wf-shadow--md: 0 4px 6px -1px rgba(0, 0, 0, 0.4), 0 2px 4px -1px rgba(0, 0, 0, 0.2);
+  --wf-shadow--lg: 0 10px 15px -3px rgba(0, 0, 0, 0.4), 0 4px 6px -2px rgba(0, 0, 0, 0.2);
+  --wf-shadow--xl: 0 20px 25px -5px rgba(0, 0, 0, 0.5), 0 10px 10px -5px rgba(0, 0, 0, 0.3);
 
   /* --- Transitions --- */
   --wf-transition--duration-fast: 150ms;

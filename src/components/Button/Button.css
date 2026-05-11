@@ -11,7 +11,8 @@
   transition: all var(--wf-transition--duration-base) var(--wf-transition--easing);
   white-space: nowrap;
   line-height: 1;
-  clip-path: polygon(10px 0, 100% 0, 100% calc(100% - 10px), calc(100% - 10px) 100%, 0 100%, 0 10px);
+  font-family: 'Cinzel', serif;
+  clip-path: none;
 }
 
 /* ─── Sizes ─── */
@@ -32,41 +33,43 @@
 
 /* ─── Variants ─── */
 .wf-button--primary {
-  background-color: var(--wf-color--primary);
-  color: var(--wf-color--black);
-  border-color: var(--wf-color--primary);
-  box-shadow: 0 4px 14px rgba(252, 238, 10, 0.35);
+  background: linear-gradient(135deg, #ae0001, #7b0d1e);
+  color: #f5e6c8;
+  border-color: rgba(200, 169, 81, 0.5);
+  box-shadow: 0 4px 14px rgba(174, 0, 1, 0.35);
 }
 
 .wf-button--primary:hover:not(.wf-button--disabled) {
-  background-color: var(--wf-color--secondary);
-  border-color: var(--wf-color--secondary);
-  color: var(--wf-color--black);
-  box-shadow: 0 6px 20px rgba(13, 240, 212, 0.5);
+  background: linear-gradient(135deg, #c8a951, #9a7a28);
+  border-color: #c8a951;
+  color: #0a080f;
+  box-shadow: 0 6px 20px rgba(200, 169, 81, 0.4);
   transform: translateY(-1px);
 }
 
 .wf-button--secondary {
   background-color: var(--wf-color--gray);
-  color: var(--wf-color--white);
-  border-color: var(--wf-color--gray);
+  color: #f5e6c8;
+  border-color: rgba(200, 169, 81, 0.3);
 }
 
 .wf-button--secondary:hover:not(.wf-button--disabled) {
   background-color: var(--wf-color--gray-dark);
-  border-color: var(--wf-color--gray-dark);
+  border-color: rgba(200, 169, 81, 0.5);
+  color: #c8a951;
   transform: translateY(-1px);
 }
 
 .wf-button--outline {
   background-color: transparent;
-  color: var(--wf-color--primary);
-  border-color: var(--wf-color--primary);
+  color: #c8a951;
+  border-color: rgba(200, 169, 81, 0.6);
 }
 
 .wf-button--outline:hover:not(.wf-button--disabled) {
-  background-color: var(--wf-color--primary);
-  color: var(--wf-color--black);
+  background: linear-gradient(135deg, #ae0001, #7b0d1e);
+  color: #f5e6c8;
+  border-color: rgba(200, 169, 81, 0.5);
   transform: translateY(-1px);
 }
 
