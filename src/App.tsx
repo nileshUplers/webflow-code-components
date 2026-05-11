@@ -9,7 +9,7 @@ function App() {
     <Router>
       <div className="App">
         <nav className="main-nav">
-          <div className="nav-logo">⚡ Webflow Spellbook</div>
+          <div className="nav-logo">🏰 Webflow Spellbook</div>
           <div className="nav-right">
             <div className="nav-links">
               <NavLink to="/" end className={({ isActive }) => isActive ? 'active' : ''}>Dashboard</NavLink>
@@ -37,14 +37,14 @@ function App() {
                 </div>
                 <div className="dashboard-grid">
                   <div className="dashboard-card">
-                    <div className="card-icon">📜</div>
+                    <div className="card-icon">🧩</div>
                     <div className="card-count">7</div>
                     <div className="card-label">Component Library</div>
                     <p className="card-desc">Preview and test all Webflow-ready React components in a live environment before casting them into production.</p>
                     <NavLink to="/components" className="card-link">View Components</NavLink>
                   </div>
                   <div className="dashboard-card">
-                    <div className="card-icon">🔮</div>
+                    <div className="card-icon">⚗️</div>
                     <div className="card-label">CSS Variables</div>
                     <p className="card-desc">Explore all global CSS variables — colors, spacing, typography, shadows — the design tokens that power every component.</p>
                     <NavLink to="/variables" className="card-link">View Variables</NavLink>
