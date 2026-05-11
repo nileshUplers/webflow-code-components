@@ -76,7 +76,7 @@ const WebflowVariablesPage: React.FC = () => {
         <div className="variable-stack">
           <div className="variable-item-group">
             <h3>Font Families & Weights</h3>
-            <div className="variable-list">
+            <div className="variable-grid-wide">
               {typography.map((typo) => (
                 <div key={typo.name} className="variable-item">
                   <code>{typo.name}</code>
@@ -88,7 +88,7 @@ const WebflowVariablesPage: React.FC = () => {
 
           <div className="variable-item-group">
             <h3>Font Size Scale</h3>
-            <div className="variable-list">
+            <div className="variable-grid-wide">
               {fontSizeScale.map((size) => (
                 <div key={size.name} className="variable-item">
                   <code>{size.name}</code>
