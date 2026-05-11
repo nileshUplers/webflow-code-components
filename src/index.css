@@ -683,9 +683,19 @@ code {
   display: flex;
   align-items: center;
   gap: 0.4rem;
+  width: 100%;
+  overflow: hidden;
+}
+
+.copyable-row code,
+.copyable-row span {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .copy-btn {
+  flex-shrink: 0;
   background: none;
   border: none;
   cursor: pointer;
