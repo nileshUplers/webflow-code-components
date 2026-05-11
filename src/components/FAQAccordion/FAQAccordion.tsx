@@ -8,30 +8,32 @@ interface FAQItem {
 
 export interface FAQAccordionProps {
   title?: string;
-  items?: FAQItem[];
   allowMultiple?: boolean;
+  q1?: string;
+  a1?: string;
+  q2?: string;
+  a2?: string;
+  q3?: string;
+  a3?: string;
 }
-
-const defaultItems: FAQItem[] = [
-  {
-    question: 'How do I use this component?',
-    answer: 'Simply drag it into your Webflow designer and update the props in the settings panel.',
-  },
-  {
-    question: 'Can I customize the styles?',
-    answer: 'Yes! The component uses global CSS variables, so any updates to your Webflow design tokens will automatically reflect here.',
-  },
-  {
-    question: 'Is it accessible?',
-    answer: 'It uses standard HTML elements and React state to manage visibility, making it easy to navigate.',
-  },
-];
 
 export const FAQAccordion = ({
   title = 'Frequently Asked Questions',
-  items = defaultItems,
   allowMultiple = false,
+  q1 = 'How do I use this component?',
+  a1 = 'Simply drag it into your Webflow designer and update the props in the settings panel.',
+  q2 = 'Can I customize the styles?',
+  a2 = 'Yes! The component uses global CSS variables, so any updates to your Webflow design tokens will automatically reflect here.',
+  q3 = 'Is it accessible?',
+  a3 = 'It uses standard HTML elements and React state to manage visibility, making it easy to navigate.',
 }: FAQAccordionProps) => {
+  // Build the items array from the individual props
+  const items: FAQItem[] = [
+    { question: q1, answer: a1 },
+    { question: q2, answer: a2 },
+    { question: q3, answer: a3 },
+  ].filter(item => item.question && item.answer); // Only include items that have both a question and answer
+
   // Store the indices of currently open items.
   // Using an array allows us to support both single and multiple open items.
   const [openIndices, setOpenIndices] = useState<number[]>([]);

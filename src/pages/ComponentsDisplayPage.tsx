@@ -96,6 +96,12 @@ const ComponentsDisplayPage: React.FC = () => {
       propsList: [
         { name: 'title', type: 'String', defaultVal: '"Frequently Asked Questions"' },
         { name: 'allowMultiple', type: 'Boolean', defaultVal: 'false' },
+        { name: 'q1', type: 'String', defaultVal: '"How do I use this component?"' },
+        { name: 'a1', type: 'String', defaultVal: '"Simply drag it..."' },
+        { name: 'q2', type: 'String', defaultVal: '"Can I customize the styles?"' },
+        { name: 'a2', type: 'String', defaultVal: '"Yes! The component..."' },
+        { name: 'q3', type: 'String', defaultVal: '"Is it accessible?"' },
+        { name: 'a3', type: 'String', defaultVal: '"It uses standard..."' },
       ],
       render: (
         <div style={{ display: 'flex', justifyContent: 'center', width: '100%' }}>
