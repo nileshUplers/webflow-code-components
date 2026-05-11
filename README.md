@@ -217,28 +217,29 @@ Now run `npm start` and check the **Components** page to see it live.
 
 ---
 
-## How to Add a New CSS Variable
+## Managing CSS Variables & Design Tokens
 
-Open `src/styles/webflow-variables.css` and add your variable inside the `:root {}` block, following the existing naming pattern:
+**Important:** The Webflow Code Components CLI does **not** push CSS variables from this repository into Webflow automatically. You must manage them manually to keep the Webflow Designer as the visual source of truth.
+
+### Step 1 — Create in Webflow
+Have your designer create the Design Token (Color, Spacing, Typography) in the Webflow Designer's **Variables** panel.
+
+### Step 2 — Copy the CSS Name
+Hover over the variable in Webflow, click the settings icon, and select **"Copy CSS variable"**.
+
+### Step 3 — Mirror Locally
+Open `src/styles/webflow-variables.css` and paste the exact variable name inside the `:root {}` block so your local React preview matches Webflow:
 
 ```css
 :root {
-  /* Your new variable */
+  /* Paste the exact name Webflow generated */
   --wf-color--accent: #ff6b6b;
   --wf-spacing--section: 5rem;
 }
 ```
 
-**Naming convention:** `--wf-[category]--[name]`
-
-| Category | Examples |
-|---|---|
-| `color` | `--wf-color--primary`, `--wf-color--accent` |
-| `spacing` | `--wf-spacing--sm`, `--wf-spacing--xl` |
-| `font-size` | `--wf-font-size--lg`, `--wf-font-size--3xl` |
-| `font-weight` | `--wf-font-weight--bold` |
-| `border-radius` | `--wf-border-radius--base` |
-| `shadow` | `--wf-shadow--md` |
+### Why use the `--wf-` namespace?
+The `--wf-` prefix is simply a naming convention used in this boilerplate to instantly distinguish **Global Webflow Tokens** from local component variables (like `--button-padding`). You are not required to use it—just ensure your local CSS names perfectly match whatever Webflow generates!
 
 > After adding, check the **Variables** page in the local preview (`/variables`) — it auto-displays all `--wf-` variables.
 

@@ -224,37 +224,51 @@ export default declareComponent(MyCard, {
         </div>
       </section>
 
-      {/* ── SECTION 4: CSS Variables ── */}
+      {/* ── SECTION 4: CSS Variables & Design Tokens ── */}
       <section className="doc-section">
-        <h2>4. Adding a CSS Variable</h2>
-        <p>Open <code>src/styles/webflow-variables.css</code> and add your variable inside the <code>:root {'{}'}</code> block:</p>
-        <div className="code-block">
-          {`:root {
-  /* Your new variable */
+        <h2>4. Managing CSS Variables</h2>
+        <p>
+          The Webflow Code Components CLI <strong>does not push CSS variables</strong> into Webflow automatically. 
+          Variables must be managed manually to ensure the Webflow Designer remains the source of truth.
+        </p>
+
+        <div className="doc-step">
+          <div className="step-number">1</div>
+          <div className="step-content">
+            <h3>Create the Variable in Webflow</h3>
+            <p>Your designer creates the Design Token (Color, Spacing, Font) in the Webflow Designer's <strong>Variables</strong> panel.</p>
+          </div>
+        </div>
+
+        <div className="doc-step">
+          <div className="step-number">2</div>
+          <div className="step-content">
+            <h3>Get the Exact CSS Name</h3>
+            <p>Hover over the new variable in Webflow, click the settings icon (or right-click), and select <strong>Copy CSS variable</strong>.</p>
+          </div>
+        </div>
+
+        <div className="doc-step">
+          <div className="step-number">3</div>
+          <div className="step-content">
+            <h3>Mirror it Locally</h3>
+            <p>Open <code>src/styles/webflow-variables.css</code> and paste the variable into the <code>:root {'{}'}</code> block so your React preview matches Webflow:</p>
+            <div className="code-block">
+              {`:root {
+  /* Paste the exact name Webflow generated */
   --wf-color--accent: #ff6b6b;
-  --wf-spacing--section: 5rem;
 }`}
+            </div>
+          </div>
         </div>
 
         <div className="info-card" style={{ marginTop: '1.5rem' }}>
-          <h4>Naming Convention: <code>--wf-[category]--[name]</code></h4>
-          <div className="doc-grid" style={{ marginTop: '1rem' }}>
-            {[
-              { category: 'color', example: '--wf-color--primary' },
-              { category: 'spacing', example: '--wf-spacing--xl' },
-              { category: 'font-size', example: '--wf-font-size--lg' },
-              { category: 'font-weight', example: '--wf-font-weight--bold' },
-              { category: 'border-radius', example: '--wf-border-radius--base' },
-              { category: 'shadow', example: '--wf-shadow--md' },
-            ].map(({ category, example }) => (
-              <div key={category} style={{ padding: '0.75rem', background: 'rgba(67,83,255,0.05)', borderRadius: '8px' }}>
-                <code style={{ color: 'var(--wf-color--primary)', fontWeight: 600 }}>{category}</code>
-                <p style={{ margin: '0.25rem 0 0', fontSize: '0.85rem', opacity: 0.75 }}>{example}</p>
-              </div>
-            ))}
-          </div>
+          <h4>Why the <code>--wf-</code> prefix?</h4>
+          <p style={{ margin: '0.5rem 0', fontSize: '0.9rem', lineHeight: 1.5 }}>
+            It's a naming convention (namespace) used to instantly distinguish <strong>Global Webflow Tokens</strong> from <strong>Local Component Variables</strong> (like <code>--button-padding</code>). You aren't strictly required to use it, as long as your local CSS variable names perfectly match the CSS variables Webflow generates!
+          </p>
           <p style={{ marginTop: '1rem', fontSize: '0.9rem', opacity: 0.8 }}>
-            💡 After adding, check the <strong>Variables</strong> tab in the local preview — it auto-displays all <code>--wf-</code> variables.
+            💡 After adding a variable locally, check the <strong>Variables</strong> tab in the local preview — it auto-displays all <code>--wf-</code> variables.
           </p>
         </div>
       </section>
