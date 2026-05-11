@@ -26,7 +26,7 @@ function App() {
               <div className="page-container">
                 <div className="dashboard-hero">
                   <div className="dashboard-eyebrow">✦ The Marauder's Map — Webflow.Spellbook</div>
-                  <h1 className="dashboard-title">Accio. Lumos. Expecto.</h1>
+                  <h1 className="dashboard-title">Accio. Lumos. Expecto Patronum.</h1>
                   <p className="dashboard-subtitle">
                     <em>"It is our choices, Harry, that show what we truly are, far more than our abilities."</em>
                     <br />
