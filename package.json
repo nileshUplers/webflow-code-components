@@ -16,8 +16,7 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "webflow:sync": "webflow extension sync",
-    "webflow:serve": "webflow extension serve"
+    "webflow:import": "webflow devlink import"
   },
   "eslintConfig": {
     "extends": [
