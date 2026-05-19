@@ -25,15 +25,29 @@ cd webflow-code-components
 npm install
 ```
 
-### 2. Set Up Environment Variables
+### 2. Webflow Authentication
 
-Create a `.env` file based on `.env.example`:
+To sync your code components to Webflow, you must authenticate. You can do this via an API Token or Browser Login.
+
+**Option A: Environment Variable (Recommended for Teams & CI/CD)**
+Generate a Workspace API token:
+1. Go to your Webflow Workspace Settings > **Integrations** > **Workspace Applications**
+2. Generate a new API token with `Code Components: Read/Write` permissions.
+3. Create a `.env` file in the root directory based on `.env.example`:
 
 ```
 WEBFLOW_API_TOKEN="your_token_here"
 ```
 
-> If no token is found, the CLI will open a browser for Workspace authorization when you run the import command.
+**Option B: Browser Login (Easy for Solo Devs)**
+If you skip creating a `.env` file, the very first time you run `npm run webflow:import`, the Webflow CLI will automatically open your default web browser and ask you to log into your Webflow account to authorize the Workspace.
+
+**How to Log Out / Switch Accounts:**
+- If you used an API token, simply delete or change the token in your `.env` file.
+- If you used Browser Login, you can clear your cached credentials by running:
+  ```bash
+  npx @webflow/cli logout
+  ```
 
 ### ⚠️ Rename Your Library ID (Important for Teams)
 

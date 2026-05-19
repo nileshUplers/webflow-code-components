@@ -29,14 +29,26 @@ const DocumentationPage: React.FC = () => {
         <div className="doc-step">
           <div className="step-number">2</div>
           <div className="step-content">
-            <h3>Configure Environment</h3>
-            <p>Create a <code>.env</code> file in the root directory based on <code>.env.example</code>:</p>
-            <div className="code-block">
+            <h3>Webflow Authentication</h3>
+            <p>To sync components to Webflow, you must authenticate your CLI. You have two options:</p>
+            
+            <p style={{ marginTop: '1rem', fontWeight: 600 }}>Option A: Environment Variable (Recommended for Teams & CI/CD)</p>
+            <p>Go to your Webflow Workspace Settings &gt; Integrations &gt; Workspace Applications to generate a token. Then create a <code>.env</code> file:</p>
+            <div className="code-block" style={{ marginTop: '0.5rem' }}>
               WEBFLOW_API_TOKEN="your_token_here"
             </div>
-            <p style={{ marginTop: '0.75rem', opacity: 0.8, fontSize: '0.9rem' }}>
-              💡 If no token is found, the CLI will open a browser for Workspace authorization when you run the import command.
-            </p>
+            
+            <p style={{ marginTop: '1rem', fontWeight: 600 }}>Option B: Browser Login (Easy for Solo Devs)</p>
+            <p>If you skip creating a <code>.env</code> file, the very first time you run <code>npm run webflow:import</code>, the CLI will automatically open a browser window and ask you to log into your Webflow account to authorize the Workspace.</p>
+            
+            <div className="info-card" style={{ marginTop: '1.5rem', marginBottom: 0 }}>
+              <h4>How to Log Out / Switch Accounts</h4>
+              <p style={{ fontSize: '0.9rem', marginBottom: '0.5rem' }}>If you used an API token, simply change or delete the token in your <code>.env</code> file.</p>
+              <p style={{ fontSize: '0.9rem' }}>If you used Browser Login, clear your cached credentials by running this command in your terminal:</p>
+              <div className="code-block" style={{ marginTop: '0.5rem' }}>
+                npx @webflow/cli logout
+              </div>
+            </div>
           </div>
         </div>
 
