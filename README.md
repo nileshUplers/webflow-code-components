@@ -89,9 +89,23 @@ src/
 
 ## How to Add a New Component
 
+### The Fast Way (Recommended)
+
+Run the scaffolding script to automatically generate the React component, CSS, Webflow registration file, and barrel exports all at once:
+
+```bash
+npm run create:component MyCard
+```
+
+Then skip directly to **Step 6** below to add it to the local preview page.
+
+---
+
+### The Manual Way
+
 > Think of it as writing a normal HTML/CSS component — the React part is minimal.
 
-### Step 1 — Create the component folder
+#### Step 1 — Create the component folder
 
 Inside `src/components/`, create a new folder named after your component:
 
@@ -101,7 +115,7 @@ src/components/MyCard/
 
 ---
 
-### Step 2 — Write the React component (`MyCard.tsx`)
+#### Step 2 — Write the React component (`MyCard.tsx`)
 
 This is your HTML + CSS-in-class structure. If you know JSX (HTML with `className` instead of `class`), you're good:
 
@@ -262,6 +276,7 @@ The `--wf-` prefix is simply a naming convention used in this boilerplate to ins
 
 ## How to Upload to Webflow
 
+### Manual Upload
 Once your component is ready:
 
 ```bash
@@ -272,6 +287,15 @@ The CLI will:
 1. Check your `.env` for the API token (or open a browser to authenticate)
 2. Bundle all `*.webflow.tsx` files
 3. Upload the library to your Webflow Workspace
+
+### Automated CI/CD (GitHub Actions)
+This repository includes a GitHub Action (`.github/workflows/webflow-import.yml`) that automatically runs the import whenever code is pushed to the `main` branch. 
+
+To enable this:
+1. Go to your GitHub Repository Settings > **Secrets and variables** > **Actions**
+2. Add a new repository secret:
+   - Name: `WEBFLOW_API_TOKEN`
+   - Value: *Your Webflow Workspace API Token*
 
 ---
 
@@ -289,6 +313,7 @@ The CLI will:
 
 | Command | Description |
 |---|---|
+| `npm run create:component <Name>` | Scaffolds a new 4-file component and barrel export |
 | `npm start` | Start local preview server |
 | `npm run webflow:import` | Bundle & upload library to Webflow |
 | `npm run build` | Build production bundle |

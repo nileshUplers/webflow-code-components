@@ -79,6 +79,15 @@ const DocumentationPage: React.FC = () => {
       {/* ── SECTION 3: Adding a New Component ── */}
       <section className="doc-section">
         <h2>3. Adding a New Component</h2>
+        
+        <div className="info-card" style={{ marginBottom: '2rem', border: '1px solid var(--wf-color--primary)', background: 'var(--wf-color--primary-light)' }}>
+          <h3 style={{ color: 'var(--wf-color--primary)' }}>⚡ The Fast Way (Recommended)</h3>
+          <p>Run our scaffolding script to instantly generate the React component, CSS, Webflow registration file, and barrel exports all at once:</p>
+          <div className="code-block" style={{ marginTop: '1rem', marginBottom: '1rem' }}>npm run create:component MyCard</div>
+          <p>After running this, you can skip directly to <strong>Step 6</strong> below to add it to the local preview page.</p>
+        </div>
+
+        <h3 style={{ marginBottom: '1rem' }}>The Manual Way</h3>
         <p>Think of it as writing a normal HTML/CSS component — the React part is minimal.</p>
 
         <div className="doc-step">
@@ -281,10 +290,21 @@ export default declareComponent(MyCard, {
         <div className="doc-step">
           <div className="step-number">1</div>
           <div className="step-content">
-            <h3>Run the Import Command</h3>
+            <h3>Manual Upload</h3>
             <div className="code-block">npm run webflow:import</div>
             <p style={{ marginTop: '0.75rem', opacity: 0.8, fontSize: '0.9rem' }}>
-              The CLI will: check your <code>.env</code> for the API token → bundle all <code>*.webflow.tsx</code> files → upload the library to your Workspace.
+              The CLI will check your <code>.env</code> for the API token, bundle all <code>*.webflow.tsx</code> files, and upload the library to your Workspace.
+            </p>
+          </div>
+        </div>
+
+        <div className="doc-step">
+          <div className="step-number">CI</div>
+          <div className="step-content">
+            <h3>Automated Upload (GitHub Actions)</h3>
+            <p>This repo includes a GitHub Action to auto-import components whenever code is pushed to <code>main</code>.</p>
+            <p style={{ marginTop: '0.75rem', opacity: 0.8, fontSize: '0.9rem' }}>
+              <strong>To enable:</strong> Go to your GitHub Repository Settings → Secrets and variables → Actions. Add a new secret named <code>WEBFLOW_API_TOKEN</code> with your Workspace API Token.
             </p>
           </div>
         </div>
@@ -310,8 +330,9 @@ export default declareComponent(MyCard, {
         <div className="doc-grid">
           <div className="info-card" style={{ margin: 0 }}>
             <h4>📦 npm Commands</h4>
+            <p><code>npm run create:component</code> — generate files</p>
             <p><code>npm start</code> — local preview server</p>
-            <p><code>npm run webflow:import</code> — upload to Webflow</p>
+            <p><code>npm run webflow:import</code> — manual upload</p>
             <p><code>npm run build</code> — production bundle</p>
           </div>
           <div className="info-card" style={{ margin: 0 }}>
