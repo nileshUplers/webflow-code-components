@@ -6,5 +6,12 @@
     ],
     "description": "A starter library for Webflow custom code components.",
     "id": "starter-component-library"
+  },
+  "telemetry": {
+    "global": {
+      "allowTelemetry": true,
+      "lastPrompted": 1779185621240,
+      "version": "1.21.0"
+    }
   }
 }

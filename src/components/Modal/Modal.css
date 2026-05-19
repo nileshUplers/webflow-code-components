@@ -40,11 +40,11 @@
 
 /* Modal Content */
 .wf-modal-content {
-  background: var(--card-bg);
+  background: var(--wf-color--surface);
   width: 100%;
   max-width: 500px;
   border-radius: var(--wf-border-radius--xl);
-  border: 1px solid var(--glass-border);
+  border: 1px solid var(--wf-color--border);
   box-shadow: var(--wf-shadow--xl), 0 0 60px rgba(99, 102, 241, 0.1);
   font-family: var(--wf-font-family--base);
   animation: modalSlideUp var(--wf-transition--duration-base) var(--wf-transition--easing);
@@ -70,7 +70,7 @@
   justify-content: space-between;
   align-items: center;
   padding: var(--wf-spacing--md) var(--wf-spacing--lg);
-  border-bottom: 1px solid var(--glass-border);
+  border-bottom: 1px solid var(--wf-color--border);
 }
 
 .wf-modal-title {
@@ -78,7 +78,7 @@
   font-family: var(--wf-font-family--heading);
   font-size: var(--wf-font-size--lg);
   font-weight: var(--wf-font-weight--bold);
-  color: var(--text-color);
+  color: var(--wf-color--text-main);
   letter-spacing: -0.3px;
 }
 
@@ -87,7 +87,7 @@
   border: none;
   font-size: 1.25rem;
   line-height: 1;
-  color: var(--text-muted);
+  color: var(--wf-color--text-muted);
   cursor: pointer;
   padding: 4px;
   display: flex;
@@ -98,14 +98,14 @@
 }
 
 .wf-modal-close-icon:hover {
-  color: var(--text-color);
+  color: var(--wf-color--text-main);
   background: var(--bg-subtle);
 }
 
 /* Body */
 .wf-modal-body {
   padding: var(--wf-spacing--lg);
-  color: var(--text-muted);
+  color: var(--wf-color--text-muted);
   font-size: var(--wf-font-size--base);
   line-height: var(--wf-line-height--relaxed);
 }
@@ -117,7 +117,7 @@
 /* Footer */
 .wf-modal-footer {
   padding: var(--wf-spacing--md) var(--wf-spacing--lg);
-  border-top: 1px solid var(--glass-border);
+  border-top: 1px solid var(--wf-color--border);
   display: flex;
   justify-content: flex-end;
   background-color: var(--bg-subtle);

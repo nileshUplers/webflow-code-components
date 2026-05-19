@@ -4,10 +4,10 @@
   align-items: center;
   gap: var(--wf-spacing--sm);
   font-family: var(--wf-font-family--base);
-  background: var(--card-bg);
+  background: var(--wf-color--surface);
   padding: var(--wf-spacing--lg);
   border-radius: var(--wf-border-radius--lg);
-  border: 1px solid var(--glass-border);
+  border: 1px solid var(--wf-color--border);
   box-shadow: var(--wf-shadow--sm);
 }
 
@@ -18,7 +18,7 @@
   font-weight: var(--wf-font-weight--bold);
   text-transform: uppercase;
   letter-spacing: 0.1em;
-  color: var(--text-muted);
+  color: var(--wf-color--text-muted);
 }
 
 .wf-countdown__grid {
@@ -48,7 +48,7 @@
 
 .wf-countdown__label {
   font-size: var(--wf-font-size--xs);
-  color: var(--text-muted);
+  color: var(--wf-color--text-muted);
   text-transform: uppercase;
   letter-spacing: 0.05em;
   font-weight: var(--wf-font-weight--medium);
@@ -57,7 +57,7 @@
 .wf-countdown__separator {
   font-size: var(--wf-font-size--2xl);
   font-weight: var(--wf-font-weight--bold);
-  color: var(--glass-border);
+  color: var(--wf-color--border);
   margin-top: -1.5rem; /* Visually align with the numbers, ignoring labels */
 }
 

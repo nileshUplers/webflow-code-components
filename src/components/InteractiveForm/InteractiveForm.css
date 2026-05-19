@@ -4,10 +4,10 @@
   gap: var(--wf-spacing--md);
   width: 100%;
   max-width: 500px;
-  background: var(--card-bg);
+  background: var(--wf-color--surface);
   padding: var(--wf-spacing--xl);
   border-radius: var(--wf-border-radius--xl);
-  border: 1px solid var(--glass-border);
+  border: 1px solid var(--wf-color--border);
   box-shadow: var(--wf-shadow--md);
   font-family: var(--wf-font-family--base);
 }
@@ -17,7 +17,7 @@
   font-family: var(--wf-font-family--heading);
   font-size: var(--wf-font-size--2xl);
   font-weight: var(--wf-font-weight--bold);
-  color: var(--text-color);
+  color: var(--wf-color--text-main);
   letter-spacing: -0.5px;
 }
 
@@ -40,17 +40,17 @@
 .wf-form__label {
   font-size: var(--wf-font-size--sm);
   font-weight: var(--wf-font-weight--semibold);
-  color: var(--text-color);
+  color: var(--wf-color--text-main);
 }
 
 .wf-form__input,
 .wf-form__textarea {
   width: 100%;
   padding: var(--wf-spacing--sm);
-  border: 1px solid var(--glass-border);
+  border: 1px solid var(--wf-color--border);
   border-radius: var(--wf-border-radius--base);
   background: var(--bg-color);
-  color: var(--text-color);
+  color: var(--wf-color--text-main);
   font-family: inherit;
   font-size: var(--wf-font-size--base);
   transition: border-color var(--wf-transition--duration-fast) ease, box-shadow var(--wf-transition--duration-fast) ease;
@@ -59,7 +59,7 @@
 
 .wf-form__input::placeholder,
 .wf-form__textarea::placeholder {
-  color: var(--text-muted);
+  color: var(--wf-color--text-muted);
   opacity: 0.7;
 }
 
@@ -121,10 +121,10 @@
   gap: var(--wf-spacing--sm);
   width: 100%;
   max-width: 500px;
-  background: var(--card-bg);
+  background: var(--wf-color--surface);
   padding: var(--wf-spacing--2xl) var(--wf-spacing--xl);
   border-radius: var(--wf-border-radius--xl);
-  border: 1px solid var(--glass-border);
+  border: 1px solid var(--wf-color--border);
   box-shadow: var(--wf-shadow--md);
   font-family: var(--wf-font-family--base);
 }
@@ -140,13 +140,13 @@
   font-family: var(--wf-font-family--heading);
   font-size: var(--wf-font-size--2xl);
   font-weight: var(--wf-font-weight--bold);
-  color: var(--text-color);
+  color: var(--wf-color--text-main);
   letter-spacing: -0.5px;
 }
 
 .wf-form-success__message {
   margin: 0 0 var(--wf-spacing--md) 0;
-  color: var(--text-muted);
+  color: var(--wf-color--text-muted);
   font-size: var(--wf-font-size--base);
   line-height: var(--wf-line-height--relaxed);
 }

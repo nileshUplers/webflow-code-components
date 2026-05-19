@@ -6,7 +6,7 @@
 .wf-carousel__swiper {
   border-radius: var(--wf-border-radius--xl);
   overflow: hidden;
-  border: 1px solid var(--glass-border);
+  border: 1px solid var(--wf-color--border);
 }
 
 /* ─── Slide ─── */
@@ -17,7 +17,7 @@
   align-items: center;
   text-align: center;
   padding: var(--wf-spacing--2xl) var(--wf-spacing--lg);
-  background: var(--card-bg);
+  background: var(--wf-color--surface);
   min-height: 200px;
   gap: var(--wf-spacing--sm);
 }
@@ -26,14 +26,14 @@
   font-family: var(--wf-font-family--heading);
   font-size: var(--wf-font-size--2xl);
   font-weight: var(--wf-font-weight--bold);
-  color: var(--text-color);
+  color: var(--wf-color--text-main);
   margin: 0;
   letter-spacing: -0.5px;
 }
 
 .wf-carousel__slide-desc {
   font-size: var(--wf-font-size--base);
-  color: var(--text-muted);
+  color: var(--wf-color--text-muted);
   line-height: var(--wf-line-height--relaxed);
   margin: 0;
   max-width: 400px;

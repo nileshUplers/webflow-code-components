@@ -2,9 +2,9 @@
   font-family: var(--wf-font-family--base);
   width: 100%;
   max-width: 600px;
-  background: var(--card-bg);
+  background: var(--wf-color--surface);
   border-radius: var(--wf-border-radius--lg);
-  border: 1px solid var(--glass-border);
+  border: 1px solid var(--wf-color--border);
   box-shadow: var(--wf-shadow--sm);
   overflow: hidden;
 }
@@ -15,8 +15,8 @@
   font-family: var(--wf-font-family--heading);
   font-size: var(--wf-font-size--xl);
   font-weight: var(--wf-font-weight--bold);
-  color: var(--text-color);
-  border-bottom: 1px solid var(--glass-border);
+  color: var(--wf-color--text-main);
+  border-bottom: 1px solid var(--wf-color--border);
   background: var(--bg-subtle);
 }
 
@@ -26,7 +26,7 @@
 }
 
 .wf-faq__item {
-  border-bottom: 1px solid var(--glass-border);
+  border-bottom: 1px solid var(--wf-color--border);
   transition: background-color var(--wf-transition--duration-fast) ease;
 }
 
@@ -51,7 +51,7 @@
   font-family: inherit;
   font-size: var(--wf-font-size--base);
   font-weight: var(--wf-font-weight--semibold);
-  color: var(--text-color);
+  color: var(--wf-color--text-main);
   transition: color var(--wf-transition--duration-fast) ease;
 }
 
@@ -73,7 +73,7 @@
 
 .wf-faq__answer {
   padding: 0 var(--wf-spacing--md) var(--wf-spacing--md);
-  color: var(--text-muted);
+  color: var(--wf-color--text-muted);
   font-size: var(--wf-font-size--sm);
   line-height: var(--wf-line-height--relaxed);
 }

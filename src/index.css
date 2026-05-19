@@ -5,20 +5,20 @@
    APP THEME TOKENS
 ───────────────────────────────────────────── */
 :root {
-  --primary-gradient: linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%);
-  --hero-gradient: linear-gradient(180deg, rgba(12,14,20,0.15) 0%, rgba(12,14,20,0.8) 100%);
-  --surface-color: rgba(18, 21, 31, 0.92);
-  --glass-border: rgba(99, 102, 241, 0.18);
-  --glass-shadow: 0 0 24px rgba(99, 102, 241, 0.1);
-  --bg-color: #0c0e14;
-  --bg-subtle: #12151f;
-  --text-color: #f1f5f9;
+  --primary-gradient: linear-gradient(135deg, #4f46e5 0%, #7c3aed 100%);
+  --hero-gradient: linear-gradient(180deg, rgba(255,255,255,0.1) 0%, rgba(248,250,252,1) 100%);
+  --surface-color: rgba(255, 255, 255, 0.95);
+  --glass-border: rgba(99, 102, 241, 0.2);
+  --glass-shadow: 0 4px 20px rgba(99, 102, 241, 0.08);
+  --bg-color: #f8fafc;
+  --bg-subtle: #ffffff;
+  --text-color: #0f172a;
   --text-muted: #64748b;
-  --card-bg: #12151f;
-  --nav-bg: rgba(12, 14, 20, 0.9);
+  --card-bg: #ffffff;
+  --nav-bg: rgba(255, 255, 255, 0.9);
   --nav-height: 64px;
   --sidebar-width: 220px;
-  --accent-glow: 0 0 28px rgba(99, 102, 241, 0.3);
+  --accent-glow: 0 0 28px rgba(99, 102, 241, 0.15);
 }
 
 /* ─────────────────────────────────────────────
@@ -31,8 +31,8 @@ body {
   font-family: 'Inter', var(--wf-font-family--base);
   background-color: var(--bg-color);
   background-image:
-    radial-gradient(ellipse at 15% 50%, rgba(99, 102, 241, 0.07) 0%, transparent 60%),
-    radial-gradient(ellipse at 85% 20%, rgba(139, 92, 246, 0.06) 0%, transparent 55%),
+    radial-gradient(ellipse at 15% 50%, rgba(99, 102, 241, 0.06) 0%, transparent 60%),
+    radial-gradient(ellipse at 85% 20%, rgba(139, 92, 246, 0.05) 0%, transparent 55%),
     radial-gradient(ellipse at 60% 85%, rgba(99, 102, 241, 0.04) 0%, transparent 50%),
     radial-gradient(ellipse at 30% 10%, rgba(139, 92, 246, 0.04) 0%, transparent 45%);
   color: var(--text-color);
@@ -50,8 +50,8 @@ h1, h2, h3, h4, h5, h6 {
 code {
   font-family: 'Fira Code', monospace;
   font-size: 0.85em;
-  background: var(--bg-subtle);
-  color: #a5b4fc;
+  background: var(--bg-color);
+  color: #4f46e5;
   padding: 2px 6px;
   border-radius: 4px;
   border: 1px solid var(--glass-border);

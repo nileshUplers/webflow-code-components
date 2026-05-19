@@ -7,7 +7,7 @@
 /* ─── Tab List ─── */
 .wf-tabs__list {
   display: flex;
-  border-bottom: 1px solid var(--glass-border);
+  border-bottom: 1px solid var(--wf-color--border);
   gap: 0;
   overflow-x: auto;
   scrollbar-width: none;
@@ -25,7 +25,7 @@
   font-family: inherit;
   font-size: var(--wf-font-size--sm);
   font-weight: var(--wf-font-weight--medium);
-  color: var(--text-muted);
+  color: var(--wf-color--text-muted);
   cursor: pointer;
   transition: color 0.2s ease, border-color 0.2s ease;
   white-space: nowrap;
@@ -33,7 +33,7 @@
 }
 
 .wf-tabs__tab:hover {
-  color: var(--text-color);
+  color: var(--wf-color--text-main);
 }
 
 .wf-tabs__tab--active {
@@ -59,7 +59,7 @@
 }
 
 .wf-tabs__content {
-  color: var(--text-muted);
+  color: var(--wf-color--text-muted);
   font-size: var(--wf-font-size--base);
   line-height: var(--wf-line-height--relaxed);
   margin: 0;
