@@ -69,7 +69,7 @@ function App() {
 
                 {/* Stats bar */}
                 <div className="dashboard-stats">
-                  <div className="stat-item"><span className="stat-value">11</span><span className="stat-label">Components</span></div>
+                  <div className="stat-item"><span className="stat-value">7</span><span className="stat-label">Components</span></div>
                   <div className="stat-item"><span className="stat-value">45+</span><span className="stat-label">CSS Tokens</span></div>
                   <div className="stat-item"><span className="stat-value">7</span><span className="stat-label">Categories</span></div>
                   <div className="stat-item"><span className="stat-value">v1.0</span><span className="stat-label">Version</span></div>

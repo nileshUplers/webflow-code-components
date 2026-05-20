@@ -9,15 +9,11 @@ import React, { useState, useMemo } from 'react';
 // ── STEP 1: Import components ─────────────────────────────────────────────
 import { Button }           from '../components/Button';
 import { Badge }            from '../components/Badge';
-import { Alert }            from '../components/Alert';
 import { Card }             from '../components/Card';
-import { Tabs }             from '../components/Tabs';
 import { Countdown }        from '../components/Countdown';
 import { FAQAccordion }     from '../components/FAQAccordion';
 import { InteractiveForm }  from '../components/InteractiveForm';
 import { Modal }            from '../components/Modal';
-import { SwiperCarousel }   from '../components/SwiperCarousel';
-import { Toast }            from '../components/Toast';
 
 // ── Types ─────────────────────────────────────────────────────────────────
 interface PlaygroundProp {
@@ -249,29 +245,6 @@ const ComponentsDisplayPage: React.FC = () => {
       ),
     },
     {
-      name: 'Alert',
-      group: 'Feedback',
-      description:
-        'A dismissible inline alert for info, success, warning, or error messages. Includes an icon, message, and close button.',
-      propsDocs: [
-        { name: 'message',     type: 'String',  defaultVal: 'Alert message' },
-        { name: 'type',        type: 'Variant', defaultVal: 'Info' },
-        { name: 'dismissible', type: 'Boolean', defaultVal: 'true' },
-      ],
-      playgroundProps: [
-        { name: 'message',     label: 'Message',     type: 'string',  default: 'This action was completed successfully.' },
-        { name: 'type',        label: 'Type',        type: 'variant', default: 'Info', options: ['Info', 'Success', 'Warning', 'Error'] },
-        { name: 'dismissible', label: 'Dismissible', type: 'boolean', default: true },
-      ],
-      render: p => (
-        <Alert
-          message={String(p.message)}
-          type={p.type as 'Info' | 'Success' | 'Warning' | 'Error'}
-          dismissible={Boolean(p.dismissible)}
-        />
-      ),
-    },
-    {
       name: 'Card',
       group: 'Content',
       description:
@@ -299,108 +272,6 @@ const ComponentsDisplayPage: React.FC = () => {
           ctaText={String(p.ctaText)}
           ctaUrl="#"
           variant={p.variant as 'Default' | 'Outlined' | 'Elevated'}
-        />
-      ),
-    },
-    {
-      name: 'Tabs',
-      group: 'Navigation',
-      description:
-        'An accessible tabbed content switcher with proper ARIA roles. Configure 3 tab labels and content panels from Webflow Designer.',
-      propsDocs: [
-        { name: 'tab1Label',   type: 'String',  defaultVal: 'Overview' },
-        { name: 'tab1Content', type: 'String',  defaultVal: '...' },
-        { name: 'tab2Label',   type: 'String',  defaultVal: 'Features' },
-        { name: 'tab2Content', type: 'String',  defaultVal: '...' },
-        { name: 'tab3Label',   type: 'String',  defaultVal: 'Details' },
-        { name: 'tab3Content', type: 'String',  defaultVal: '...' },
-        { name: 'defaultTab',  type: 'Variant', defaultVal: 'Tab 1' },
-      ],
-      playgroundProps: [
-        { name: 'tab1Label',   label: 'Tab 1 Label',   type: 'string',  default: 'Overview' },
-        { name: 'tab1Content', label: 'Tab 1 Content', type: 'string',  default: 'Welcome to the overview tab. This is where you introduce your topic.' },
-        { name: 'tab2Label',   label: 'Tab 2 Label',   type: 'string',  default: 'Features' },
-        { name: 'tab2Content', label: 'Tab 2 Content', type: 'string',  default: 'List the key features and capabilities here.' },
-        { name: 'tab3Label',   label: 'Tab 3 Label',   type: 'string',  default: 'Details' },
-        { name: 'tab3Content', label: 'Tab 3 Content', type: 'string',  default: 'Provide technical details and specifications here.' },
-      ],
-      render: p => (
-        <Tabs
-          tab1Label={String(p.tab1Label)}
-          tab1Content={String(p.tab1Content)}
-          tab2Label={String(p.tab2Label)}
-          tab2Content={String(p.tab2Content)}
-          tab3Label={String(p.tab3Label)}
-          tab3Content={String(p.tab3Content)}
-        />
-      ),
-    },
-    {
-      name: 'Toast',
-      group: 'Feedback',
-      description:
-        'A portal-rendered toast notification that renders above all content via ReactDOM.createPortal. Auto-dismisses after a configurable duration.',
-      propsDocs: [
-        { name: 'message',    type: 'String',  defaultVal: 'This is a notification.' },
-        { name: 'type',       type: 'Variant', defaultVal: 'Info' },
-        { name: 'duration',   type: 'Number',  defaultVal: '3000' },
-        { name: 'position',   type: 'Variant', defaultVal: 'Top Right' },
-        { name: 'buttonText', type: 'String',  defaultVal: 'Show Toast' },
-      ],
-      playgroundProps: [
-        { name: 'message',    label: 'Message',    type: 'string',  default: 'Action completed successfully!' },
-        { name: 'type',       label: 'Type',       type: 'variant', default: 'Info',      options: ['Info', 'Success', 'Warning', 'Error'] },
-        { name: 'duration',   label: 'Duration ms',type: 'number',  default: 3000 },
-        { name: 'position',   label: 'Position',   type: 'variant', default: 'Top Right', options: ['Top Right', 'Top Left', 'Bottom Right', 'Bottom Left', 'Top Center', 'Bottom Center'] },
-        { name: 'buttonText', label: 'Button Text',type: 'string',  default: 'Show Toast' },
-      ],
-      render: p => (
-        <Toast
-          message={String(p.message)}
-          type={p.type as 'Info' | 'Success' | 'Warning' | 'Error'}
-          duration={Number(p.duration)}
-          position={p.position as 'Top Right' | 'Top Left' | 'Bottom Right' | 'Bottom Left' | 'Top Center' | 'Bottom Center'}
-          buttonText={String(p.buttonText)}
-        />
-      ),
-    },
-    {
-      name: 'Swiper Carousel',
-      group: 'Media',
-      description:
-        'A touch-friendly, mobile-optimised carousel powered by Swiper.js. Supports autoplay, loop, navigation arrows, and pagination dots.',
-      propsDocs: [
-        { name: 'slide1Title',       type: 'String',  defaultVal: 'Slide One' },
-        { name: 'slide1Description', type: 'String',  defaultVal: '...' },
-        { name: 'autoplay',          type: 'Boolean', defaultVal: 'false' },
-        { name: 'loop',              type: 'Boolean', defaultVal: 'true' },
-        { name: 'showNavigation',    type: 'Boolean', defaultVal: 'true' },
-        { name: 'showPagination',    type: 'Boolean', defaultVal: 'true' },
-      ],
-      playgroundProps: [
-        { name: 'slide1Title',       label: 'Slide 1 Title', type: 'string',  default: 'First Slide' },
-        { name: 'slide1Description', label: 'Slide 1 Text',  type: 'string',  default: 'Add compelling content for your first slide here.' },
-        { name: 'slide2Title',       label: 'Slide 2 Title', type: 'string',  default: 'Second Slide' },
-        { name: 'slide2Description', label: 'Slide 2 Text',  type: 'string',  default: 'Add compelling content for your second slide here.' },
-        { name: 'slide3Title',       label: 'Slide 3 Title', type: 'string',  default: 'Third Slide' },
-        { name: 'slide3Description', label: 'Slide 3 Text',  type: 'string',  default: 'Add compelling content for your third slide here.' },
-        { name: 'autoplay',          label: 'Autoplay',        type: 'boolean', default: false },
-        { name: 'loop',              label: 'Loop',             type: 'boolean', default: true },
-        { name: 'showNavigation',    label: 'Show Navigation',  type: 'boolean', default: true },
-        { name: 'showPagination',    label: 'Show Pagination',  type: 'boolean', default: true },
-      ],
-      render: p => (
-        <SwiperCarousel
-          slide1Title={String(p.slide1Title)}
-          slide1Description={String(p.slide1Description)}
-          slide2Title={String(p.slide2Title)}
-          slide2Description={String(p.slide2Description)}
-          slide3Title={String(p.slide3Title)}
-          slide3Description={String(p.slide3Description)}
-          autoplay={Boolean(p.autoplay)}
-          loop={Boolean(p.loop)}
-          showNavigation={Boolean(p.showNavigation)}
-          showPagination={Boolean(p.showPagination)}
         />
       ),
     },

@@ -44,16 +44,16 @@ const DocumentationPage: React.FC = () => {
           <div className="step-content">
             <h3>Webflow Authentication</h3>
             <p>To sync components to Webflow, you must authenticate your CLI. You have two options:</p>
-            
+
             <p style={{ marginTop: '1rem', fontWeight: 600 }}>Option A: Environment Variable (Recommended for Teams & CI/CD)</p>
             <p>Go to your Webflow Workspace Settings &gt; Integrations &gt; Workspace Applications to generate a token. Then create a <code>.env</code> file:</p>
             <CommandBlock style={{ marginTop: '0.5rem' }} code={`WEBFLOW_API_TOKEN="your_token_here"`} />
-            
+
             <p style={{ marginTop: '1rem', fontWeight: 600 }}>Option B: Browser Login (Easy for Solo Devs)</p>
             <p>If you skip creating a <code>.env</code> file, the very first time you run this command:</p>
             <CommandBlock style={{ marginTop: '0.5rem', marginBottom: '0.5rem' }} code={`npm run webflow:import`} />
             <p>The CLI will automatically open a browser window and ask you to log into your Webflow account to authorize the Workspace.</p>
-            
+
             <div className="info-card" style={{ marginTop: '1.5rem', marginBottom: 0 }}>
               <h4>How to Log Out / Switch Accounts</h4>
               <p style={{ fontSize: '0.9rem', marginBottom: '0.5rem' }}>If you used an API token, simply change or delete the token in your <code>.env</code> file.</p>
@@ -102,7 +102,7 @@ const DocumentationPage: React.FC = () => {
       {/* ── SECTION 3: Adding a New Component ── */}
       <section className="doc-section">
         <h2>3. Adding a New Component</h2>
-        
+
         <div className="info-card" style={{ marginBottom: '2rem', border: '1px solid var(--wf-color--primary)', background: 'var(--wf-color--primary-light)' }}>
           <h3 style={{ color: 'var(--wf-color--primary)' }}>⚡ The Fast Way (Recommended)</h3>
           <p>Run our scaffolding script to instantly generate the React component, CSS, Webflow registration file, and barrel exports all at once:</p>
@@ -300,7 +300,7 @@ export default declareComponent(MyCard, {
       <section className="doc-section">
         <h2>4. Managing CSS Variables</h2>
         <p>
-          The Webflow Code Components CLI <strong>does not push CSS variables</strong> into Webflow automatically. 
+          The Webflow Code Components CLI <strong>does not push CSS variables</strong> into Webflow automatically.
           Variables must be managed manually to ensure the Webflow Designer remains the source of truth.
         </p>
 
